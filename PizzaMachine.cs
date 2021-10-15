@@ -6,6 +6,12 @@ namespace Lab2
 {
     class PizzaMachine
     {
+        private PizzaType mIngredients;
+        public PizzaType Ingredients
+        {
+            get { return mIngredients; }
+            set { mIngredients = value; }
+        }
     }
     enum PizzaType
     {
@@ -39,7 +45,13 @@ namespace Lab2
             }
         }
         private readonly DateTime mTimeofCreation;
-
-
+        public DateTime TimeOfCreation
+        {
+            get { return mTimeofCreation; }
+        }
+        public Pizza(PizzaType aIngredients)
+        { mTimeofCreation = DateTime.Now;
+            mIngredients = aIngredients;
+        }
     }
 }
