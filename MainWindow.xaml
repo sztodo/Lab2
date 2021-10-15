@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize">
     <Grid x:Name="frmMain" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="81">
             <MenuItem Header="File">
                 <MenuItem Header="Exit"/>
@@ -23,7 +27,7 @@
             </MenuItem>
         </Menu>
         <Label x:Name="lblTitle" Content=" Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="292,0,0,0" VerticalAlignment="Top" Height="41" Width="257" FontSize="24" FontWeight="Bold"/>
-        <GroupBox x:Name="gbpizza" Header="Pizza Type" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="774" Margin="10,46,0,0" FontWeight="Bold">
+        <GroupBox x:Name="gbpizza" Header="Pizza Type" HorizontalAlignment="Left" Height="128" VerticalAlignment="Top" Width="774" Margin="10,46,0,0" FontWeight="Bold" Grid.ColumnSpan="2">
             <Canvas HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="752" Margin="0,1,0,0">
                 <Label x:Name="lblMargheritaPizza" Content="Pizza Margherita" Canvas.Top="10"/>
                 <TextBox x:Name="txtMargheritaPizza" Height="23" Canvas.Left="111" TextWrapping="Wrap" Text="0" Canvas.Top="12" Width="105" TextAlignment="Right" IsReadOnly="True"/>
@@ -38,8 +42,8 @@
                 <Canvas Height="100" Width="100"/>
             </Canvas>
         </GroupBox>
-        <GroupBox x:Name="gbSale" Header="Current Sale" HorizontalAlignment="Left" Height="220" Margin="10,190,0,0" VerticalAlignment="Top" Width="774" FontWeight="Bold"/>
-        <Canvas HorizontalAlignment="Left" Height="196" Margin="25,207,0,0" VerticalAlignment="Top" Width="752">
+        <GroupBox x:Name="gbSale" Header="Current Sale" HorizontalAlignment="Left" Height="220" Margin="10,190,0,0" VerticalAlignment="Top" Width="774" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Canvas HorizontalAlignment="Left" Height="196" Margin="25,207,0,0" VerticalAlignment="Top" Width="752" Grid.ColumnSpan="2">
             <Label x:Name="lblQuantity" Content="Quantity" Canvas.Top="3"/>
             <TextBox x:Name="txtQuantity" Height="23" Canvas.Left="61" TextWrapping="Wrap" Text="0" Canvas.Top="6" Width="100" TextAlignment="Right"/>
             <Label x:Name="lblType" Content="Type" Canvas.Left="211" Canvas.Top="3"/>
