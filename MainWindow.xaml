@@ -31,7 +31,7 @@
 					<MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"
 							  Click="canPizzaMenuItem_Click" IsCheckable="True"/>
 				</MenuItem>
-				<MenuItem Header="Stop"/>
+				<MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
 			</MenuItem>
 		</Menu>
 		<Label x:Name="lblTitle" Content=" Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" Height="41" Width="257" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="3"/>
