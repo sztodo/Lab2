@@ -89,7 +89,7 @@ namespace Lab2
                     break;
                 case PizzaType.Quattro_Stagioni:
                     mQuattroStagioniPizza++;
-                    txtQuattroStagioniPizza.Text = mQuattroStagioniPizza.ToString();
+                    txtQuatroPizza.Text = mQuattroStagioniPizza.ToString();
                     break;
                 case PizzaType.Canibale:
                     mCanibalePizza++;
@@ -109,6 +109,23 @@ namespace Lab2
             myPizzaMachine = new PizzaMachine();
             myPizzaMachine.PizzaComplete += new PizzaMachine.PizzaCompleteDelegate(PizzaCompleteHandler);
 
+        }
+        private void stopMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            myPizzaMachine.Enabled = false;
+        }
+        private void exitMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtQuantity_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (!(e.Key >= Key.D0 && e.Key <= Key.D9))
+            {
+                MessageBox.Show("Numai cifre se pot introduce!", "Input Error", MessageBoxButton.OK,
+               MessageBoxImage.Error);
+            }
         }
     }
 }
