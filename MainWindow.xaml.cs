@@ -20,9 +20,22 @@ namespace Lab2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PizzaMachine myPizzaMachine;
+        private int mMargheritaPizza;
+        private int mPepperoniPizza;
+        private int mVeggiePizza;
+        private int mQuattroStagioniPizza;
+        private int mCanibalePizza;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void frmMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            myPizzaMachine = new PizzaMachine();
+
         }
     }
 }
