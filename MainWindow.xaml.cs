@@ -26,8 +26,53 @@ namespace Lab2
         private int mVeggiePizza;
         private int mQuattroStagioniPizza;
         private int mCanibalePizza;
+        private void margPizzaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            margPizzaMenuItem.IsChecked = true;
+            pepPizzaMenuItem.IsChecked = false;
+            vegPizzaMenuItem.IsChecked = false;
+            quatPizzaMenuItem.IsChecked = false;
+            canPizzaMenuItem.IsChecked = false;
+            myPizzaMachine.MakePizzas(PizzaType.Margherita);
+        }
+        private void pepPizzaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            margPizzaMenuItem.IsChecked = false;
+            pepPizzaMenuItem.IsChecked = true;
+            vegPizzaMenuItem.IsChecked = false;
+            quatPizzaMenuItem.IsChecked = false;
+            canPizzaMenuItem.IsChecked = false;
+            myPizzaMachine.MakePizzas(PizzaType.Pepperoni);
+        }
+        private void vegPizzaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            margPizzaMenuItem.IsChecked = false;
+            pepPizzaMenuItem.IsChecked = false;
+            vegPizzaMenuItem.IsChecked = true;
+            quatPizzaMenuItem.IsChecked = false;
+            canPizzaMenuItem.IsChecked = false;
+            myPizzaMachine.MakePizzas(PizzaType.Veggie);
+        }
+        private void quatPizzaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            margPizzaMenuItem.IsChecked = false;
+            pepPizzaMenuItem.IsChecked = false;
+            vegPizzaMenuItem.IsChecked = false;
+            quatPizzaMenuItem.IsChecked = true;
+            canPizzaMenuItem.IsChecked = false;
+            myPizzaMachine.MakePizzas(PizzaType.Quattro_Stagioni);
+        }
+        private void canPizzaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            margPizzaMenuItem.IsChecked = false;
+            pepPizzaMenuItem.IsChecked = false;
+            vegPizzaMenuItem.IsChecked = false;
+            quatPizzaMenuItem.IsChecked = false;
+            canPizzaMenuItem.IsChecked = true;
+            myPizzaMachine.MakePizzas(PizzaType.Canibale);
+        }
 
-        public MainWindow()
+               public MainWindow()
         {
             InitializeComponent();
         }
