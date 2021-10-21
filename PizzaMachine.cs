@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Windows.Threading;
 
 namespace Lab2
 
 {
-    public delegate void PizzaCompleteDelegate();
-    public event PizzaCompleteDelegate PizzaComplete;
     class PizzaMachine: Component
     {
         private PizzaType mIngredients;
@@ -28,6 +27,25 @@ namespace Lab2
                 mPizzas[Index] = value;
             }
         }
+        public PizzaMachine()
+        {
+            InitializeComponent();
+        }
+        public delegate void PizzaCompleteDelegate();
+        public event PizzaCompleteDelegate PizzaComplete;
+        DispatcherTimer pizzaBakeTimer;
+        private void pizzaBakeTimer_Tick(object sender, EventArgs e)
+        {
+            Pizza aPizza = new Pizza(this.Ingredients);
+            mPizzas.Add(aPizza);
+            PizzaComplete();
+        }
+        private void InitializeComponent()
+        {
+            this.pizzaBakeTimer = new DispatcherTimer();
+            this.pizzaBakeTimer.Tick += new System.EventHandler(this.pizzaBakeTimer_Tick);
+        }
+
     }
     enum PizzaType
     {
