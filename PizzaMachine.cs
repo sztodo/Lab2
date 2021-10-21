@@ -1,16 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace Lab2
+
 {
-    class PizzaMachine
+    public delegate void PizzaCompleteDelegate();
+    public event PizzaCompleteDelegate PizzaComplete;
+    class PizzaMachine: Component
     {
         private PizzaType mIngredients;
         public PizzaType Ingredients
         {
             get { return mIngredients; }
             set { mIngredients = value; }
+        }
+        private System.Collections.ArrayList mPizzas = new System.Collections.ArrayList();
+        public Pizza this[int Index]
+        {
+            get
+            {
+                return (Pizza)mPizzas[Index];
+            }
+            set
+            {
+                mPizzas[Index] = value;
+            }
         }
     }
     enum PizzaType
