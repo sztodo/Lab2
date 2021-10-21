@@ -71,8 +71,35 @@ namespace Lab2
             canPizzaMenuItem.IsChecked = true;
             myPizzaMachine.MakePizzas(PizzaType.Canibale);
         }
+        private void PizzaCompleteHandler()
+        {
+            switch (myPizzaMachine.Ingredients)
+            {
+                case PizzaType.Margherita:
+                    mMargheritaPizza++;
+                    txtMargheritaPizza.Text = mMargheritaPizza.ToString();
+                    break;
+                case PizzaType.Pepperoni:
+                    mPepperoniPizza++;
+                    txtPepperoniPizza.Text = mPepperoniPizza.ToString();
+                    break;
+                case PizzaType.Veggie:
+                    mVeggiePizza++;
+                    txtVeggiePizza.Text = mVeggiePizza.ToString();
+                    break;
+                case PizzaType.Quattro_Stagioni:
+                    mQuattroStagioniPizza++;
+                    txtQuattroStagioniPizza.Text = mQuattroStagioniPizza.ToString();
+                    break;
+                case PizzaType.Canibale:
+                    mCanibalePizza++;
+                    txtCanibalePizza.Text = mCanibalePizza.ToString();
+                    break;
+                    
+            }
+        }
 
-               public MainWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -80,6 +107,7 @@ namespace Lab2
         private void frmMain_Loaded(object sender, RoutedEventArgs e)
         {
             myPizzaMachine = new PizzaMachine();
+            myPizzaMachine.PizzaComplete += new PizzaMachine.PizzaCompleteDelegate(PizzaCompleteHandler);
 
         }
     }
