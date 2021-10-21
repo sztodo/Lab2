@@ -9,6 +9,10 @@ namespace Lab2
 {
     class PizzaMachine: Component
     {
+        public PizzaMachine()
+        {
+            InitializeComponent();
+        }
         private PizzaType mIngredients;
         public PizzaType Ingredients
         {
@@ -27,10 +31,7 @@ namespace Lab2
                 mPizzas[Index] = value;
             }
         }
-        public PizzaMachine()
-        {
-            InitializeComponent();
-        }
+       
         public delegate void PizzaCompleteDelegate();
         public event PizzaCompleteDelegate PizzaComplete;
         DispatcherTimer pizzaBakeTimer;
