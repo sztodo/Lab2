@@ -20,6 +20,7 @@ namespace Lab2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PizzaMachine myPizzaMachine;
         public MainWindow()
         {
             InitializeComponent();

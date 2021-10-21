@@ -45,6 +45,34 @@ namespace Lab2
             this.pizzaBakeTimer = new DispatcherTimer();
             this.pizzaBakeTimer.Tick += new System.EventHandler(this.pizzaBakeTimer_Tick);
         }
+        public bool Enabled
+        {
+            set
+            {
+                pizzaBakeTimer.IsEnabled = value;
+            }
+        }
+        public int Interval
+        {
+            set
+            {
+                pizzaBakeTimer.Interval = new TimeSpan(0, 0, value);
+            }
+        }
+        public void MakePizzas(PizzaType dIngredients)
+        {
+            Ingredients = dIngredients;
+
+            switch (Ingredients)
+            {
+                case PizzaType.Canibale: Interval = 3; break;
+                case PizzaType.Margherita: Interval = 2; break;
+                case PizzaType.Pepperoni: Interval = 5; break;
+                case PizzaType.Quattro_Stagioni: Interval = 7; break;
+                case PizzaType.Veggie: Interval = 4; break;
+            }
+            pizzaBakeTimer.Start();
+        }
 
     }
     enum PizzaType
