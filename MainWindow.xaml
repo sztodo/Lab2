@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pizza_colosseo"
         mc:Ignorable="d"
-        Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize">
-    <Grid x:Name="frmMain" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+        Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize" Loaded="frmMain_Loaded">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="67*"/>
-            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="192*"/>
+            <ColumnDefinition Width="576*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
+
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="81">
             <MenuItem Header="File">
                 <MenuItem Header="Exit"/>
