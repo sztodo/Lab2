@@ -144,10 +144,17 @@ namespace Lab2
             CommandBinding cmd1 = new CommandBinding();
             //asociere comanda
             cmd1.Command = ApplicationCommands.Print;
+            //input gesture: Alt + I
+            ApplicationCommands.Print.InputGestures.Add(new KeyGesture(Key.I, ModifierKeys.Alt));
             //asociem un handler
             cmd1.Executed += new ExecutedRoutedEventHandler(CtrlP_CommandHandler);
             //adaugam la colectia CommandBindings
             this.CommandBindings.Add(cmd1);
+            //Pizza > Stop menu item
+            CommandBinding cmd2 = new CommandBinding();
+            cmd2.Command = CustomCommands.StopCommand.Launch;
+            cmd2.Executed += new ExecutedRoutedEventHandler(CtrlS_CommandHandler);
+            this.CommandBindings.Add(cmd2);
         }
         private void CtrlP_CommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -155,6 +162,12 @@ namespace Lab2
             mPepperoniPizza + " Pepperoni pizza, " + mVeggiePizza + " Veggie Pizza," +
             mQuattroStagioniPizza + " Quattro Stagioni pizza, " + mCanibalePizza + " Canibale pizza"
             );
+        }
+        private void CtrlS_CommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            //handler pentru comanda Ctrl+S -> se va executa stopMenuItem_Click
+            MessageBox.Show("Ctrl+S was pressed! The pizza machine will stop!");
+            this.stopMenuItem_Click(sender, e);
         }
 
         private void frmMain_Loaded(object sender, RoutedEventArgs e)

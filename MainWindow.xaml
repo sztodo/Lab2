@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2"
+        xmlns:CustomCommands="clr-namespace:Lab2.CustomCommands"
         mc:Ignorable="d"
         Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize" Loaded="frmMain_Loaded">
 
@@ -25,7 +26,7 @@
                     <MenuItem x:Name="canPizzaMenuItem" Header="Canibale Pizza"
 							  Click="canPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
-                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
+                <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click" InputGestureText="Ctrl+S" Command="CustomCommands:StopCommand.Launch"/>
                 <MenuItem Header="Inventory" Command="ApplicationCommands.Print"/>
             </MenuItem>
         </Menu>
