@@ -191,5 +191,43 @@ namespace Lab2
         {
             lstSale.Items.Remove(lstSale.SelectedItem);
         }
+        private void btnCheckOut_Click(object sender, RoutedEventArgs e)
+        {
+            txtTotal.Text = (double.Parse(txtTotal.Text) + double.Parse(txtQuantity.Text) *
+           double.Parse(txtPrice.Text)).ToString();
+            foreach (string s in lstSale.Items)
+            {
+                switch (s.Substring(s.IndexOf(" ") + 1, s.IndexOf(":") - s.IndexOf(" ") - 1))
+                {
+                    case "Margherita":
+                        mMargheritaPizza = mMargheritaPizza - Int32.Parse(s.Substring(0,
+                       s.IndexOf(" ")));
+                        txtMargheritaPizza.Text = mMargheritaPizza.ToString();
+                        break;
+                    case "Pepperoni":
+                        mPepperoniPizza = mPepperoniPizza - Int32.Parse(s.Substring(0,
+                       s.IndexOf(" ")));
+                        txtPepperoniPizza.Text = mPepperoniPizza.ToString();
+                        break;
+                    case "Veggie":
+                        mVeggiePizza = mVeggiePizza - Int32.Parse(s.Substring(0,
+                       s.IndexOf(" ")));
+                        txtVeggiePizza.Text = mVeggiePizza.ToString();
+                        break;
+
+                    case "QuattroStagioni":
+                        mQuattroStagioniPizza = mQuattroStagioniPizza - Int32.Parse(s.Substring(0,
+                       s.IndexOf(" ")));
+                        txtQuatroPizza.Text= mQuattroStagioniPizza.ToString();
+                        break;
+                    case "Cannibale":
+                        mCanibalePizza = mCanibalePizza - Int32.Parse(s.Substring(0,
+                       s.IndexOf(" ")));
+                        txtCanibalePizza.Text = mCanibalePizza.ToString();
+                        break;
+                }
+            }
+        }
+
     }
 }

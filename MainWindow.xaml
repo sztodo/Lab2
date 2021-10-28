@@ -55,8 +55,8 @@
             <ListBox x:Name="lstSale" Height="121" Canvas.Top="42" Width="587"/>
             <TextBox x:Name="txtTotal" Height="23" Canvas.Left="467" TextWrapping="Wrap" Text="0" Canvas.Top="173" Width="120" TextAlignment="Right" IsReadOnly="True"/>
             <Button x:Name="btnAddToSale" Content="Add To Sale" Canvas.Left="624" Canvas.Top="69" Width="85" Click="btnAddToSale_Click"/>
-            <Button x:Name="btnRemoveItem" Content=" Remove Item" Canvas.Left="624" Canvas.Top="93" Width="85"Click="btnRemoveItem_Click"/>
-            <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="624" Canvas.Top="117" Width="85" FontWeight="Bold"/>
+            <Button x:Name="btnRemoveItem" Content=" Remove Item" Canvas.Left="624" Canvas.Top="93" Width="85" Click="btnRemoveItem_Click"/>
+            <Button x:Name="btnCheckOut" Content="Check Out" Canvas.Left="624" Canvas.Top="117" Width="85" FontWeight="Bold" Click="btnCheckOut_Click"/>
         </Canvas>
         <Label x:Name="lblTotal" Content="Total" HorizontalAlignment="Left" Margin="130,377,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26"/>
 
