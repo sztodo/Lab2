@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Pizzeria Colosseo" Height="450" Width="800" ResizeMode="NoResize" Loaded="frmMain_Loaded">
 
-    <Grid Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
+    <Grid MenuItem.Click="PizzaItemsShow_Click" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}">
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="81">
             <MenuItem x:Name="File" Header="File">
                 <MenuItem x:Name="Exit" Header="Exit" Click="exitMenuItem_Click"/>
@@ -26,6 +26,7 @@
 							  Click="canPizzaMenuItem_Click" IsCheckable="True"/>
                 </MenuItem>
                 <MenuItem Header="Stop" x:Name="mnuStop" Click="stopMenuItem_Click"/>
+                <MenuItem Header="Inventory" Command="ApplicationCommands.Print"/>
             </MenuItem>
         </Menu>
         <Label x:Name="lblTitle" Content=" Pizza - Bake &amp; Sale" HorizontalAlignment="Left" Margin="46,15,0,0" VerticalAlignment="Top" Height="41" Width="257" FontSize="24" FontWeight="Bold" Grid.Column="1"/>

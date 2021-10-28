@@ -136,13 +136,27 @@ namespace Lab2
             }
             return r;
         }
-
-
         public MainWindow()
         {
             
             InitializeComponent();
+            //creare obiect binding pentru comanda
+            CommandBinding cmd1 = new CommandBinding();
+            //asociere comanda
+            cmd1.Command = ApplicationCommands.Print;
+            //asociem un handler
+            cmd1.Executed += new ExecutedRoutedEventHandler(CtrlP_CommandHandler);
+            //adaugam la colectia CommandBindings
+            this.CommandBindings.Add(cmd1);
         }
+        private void CtrlP_CommandHandler(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("You have in stock:" + mMargheritaPizza + " Margherita pizza," +
+            mPepperoniPizza + " Pepperoni pizza, " + mVeggiePizza + " Veggie Pizza," +
+            mQuattroStagioniPizza + " Quattro Stagioni pizza, " + mCanibalePizza + " Canibale pizza"
+            );
+        }
+
         private void frmMain_Loaded(object sender, RoutedEventArgs e)
         {
             myPizzaMachine = new PizzaMachine();
@@ -226,6 +240,25 @@ namespace Lab2
                         txtCanibalePizza.Text = mCanibalePizza.ToString();
                         break;
                 }
+            }
+        }
+        private void PizzaItemsShow_Click(object sender, RoutedEventArgs e)
+        {
+            string mesaj;
+            MenuItem SelectedItem = (MenuItem)e.OriginalSource;
+            string stringHeader = SelectedItem.Header as string;
+            switch (stringHeader)
+            {
+                case "Stop":
+                    this.Title = "Stopped Machine";
+                    break;
+                case "Inventory":
+                    this.Title = "Checking the inventory...";
+                    break;
+                default:
+                    mesaj = SelectedItem.Header.ToString() + " is being cooked!";
+                    this.Title = mesaj;
+                    break;
             }
         }
 
